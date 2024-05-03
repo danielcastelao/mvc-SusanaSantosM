@@ -20,5 +20,17 @@ public class ModelTest {
     }
 
     @Test
-    public void
+    public void pruebaCambiarVelocidad(){
+        Coche coche = Model.crearCoche("501301D","Toyota",0);
+        Integer velocidad = Model.cambiarVelocidad("501301D", 80);
+        Assertions.assertEquals(80, velocidad);
+        Assertions.assertEquals(coche.velocidad, velocidad);
+    }
+
+    @Test
+    public void pruebaGetVelocidad(){
+        Coche coche = Model.crearCoche("501301D","Toyota",80);
+        Assertions.assertEquals(80, Model.getVelocidad("501301D"));
+    }
+
 }
