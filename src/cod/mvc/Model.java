@@ -27,4 +27,9 @@ public class Model {
         }
         return velocidad;
     }
+
+    public static Integer getVelocidad(String matricula){
+        Coche coche = getCoche(matricula);
+        return coche.velocidad;
+    }
 }
