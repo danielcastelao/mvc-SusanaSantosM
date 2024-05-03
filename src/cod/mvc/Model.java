@@ -20,4 +20,11 @@ public class Model {
         return null;
     }
 
+    public static Integer cambiarVelocidad(String matricula, Integer velocidad){
+        Coche coche = getCoche(matricula);
+        if (coche != null){
+            coche.velocidad = velocidad;
+        }
+        return velocidad;
+    }
 }
