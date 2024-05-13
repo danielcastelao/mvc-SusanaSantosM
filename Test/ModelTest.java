@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import cod.mvc.model.Model;
-import cod.mvc.Coche;
+import cod.mvc.model.Coche;
 
 public class ModelTest {
 
