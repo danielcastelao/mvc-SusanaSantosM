@@ -1,11 +1,16 @@
 package cod.mvc.model;
 
-import cod.mvc.Coche;
+import cod.mvc.controller.Observer;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Model {
+    //ArrayList de coches
     private static ArrayList<Coche> parking = new ArrayList<Coche>();
+
+    //Lista de observadores
+    private List<Observer> observers = new ArrayList<>();
 
     public static Coche crearCoche(String matricula, String modelo, Integer velocidad){
         Coche cocheNuevo = new Coche(matricula, modelo, velocidad);
