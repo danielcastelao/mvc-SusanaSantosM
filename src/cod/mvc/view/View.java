@@ -1,4 +1,4 @@
-package cod.mvc;
+package cod.mvc.view;
 
 public class View {
     /**
