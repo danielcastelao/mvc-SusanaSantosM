@@ -19,5 +19,5 @@ public interface Observable {
     /**
      * Notifica a los observadores
      */
-    void notifyObservers(Coche cohe);
+    void notifyObservers(Coche cohe, Model model);
 }
