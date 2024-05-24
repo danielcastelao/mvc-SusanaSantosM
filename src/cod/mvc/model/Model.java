@@ -24,9 +24,9 @@ public class Model implements Observable{
     }
 
     @Override
-    public void notifyObservers(Coche coche) {
+    public void notifyObservers(Coche coche, Model model) {
         for (Observer observer : observers){
-            observer.update(coche);
+            observer.update(coche,this);
         }
     }
 
@@ -68,7 +68,7 @@ public class Model implements Observable{
         //Buscamos el coche y cambiamos la velocidad
         getCoche(matricula).velocidad = velocidad;
         //Notificamos a los observadores
-        notifyObservers(getCoche(matricula));
+        notifyObservers(getCoche(matricula),this);
 
         // ya no retornamos la nueva velocidad
         // porque vamos a utilizar el patron observer
