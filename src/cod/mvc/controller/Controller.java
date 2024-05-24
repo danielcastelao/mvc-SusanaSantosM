@@ -23,7 +23,6 @@ public class Controller {
 
     }
 
-
     //Métodos que se comunican con el modelo
     public void crearCoche(String matricula, String modelo, Integer velocidad){
         miModelo.crearCoche(matricula, modelo, velocidad);
