@@ -5,6 +5,7 @@ import cod.mvc.model.Model;
 
 public class App {
     public static void main(String[] args){
+
         //Inicializamos la aplicación
 
         //Instanciamos el modelo
@@ -22,5 +23,7 @@ public class App {
 
         //Otro cambio de velocidad
         miController.cambiarVelocidad("1234ABC", 250);
+
+
     }
 }
