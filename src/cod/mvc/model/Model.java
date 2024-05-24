@@ -7,10 +7,10 @@ import java.util.List;
 
 public class Model implements Observable{
     //ArrayList de coches
-    private static ArrayList<Coche> parking = new ArrayList<Coche>();
+    private static ArrayList<Coche> parking = new ArrayList<>();
 
     //Lista de observadores
-    private static final List<Observer> observers = new ArrayList<>();
+    private static final ArrayList<Observer> observers = new ArrayList<>();
 
 
     @Override
@@ -29,6 +29,8 @@ public class Model implements Observable{
             observer.update(coche);
         }
     }
+
+
 
     /**
      * Crea un coche y lo añade al parking
@@ -62,22 +64,25 @@ public class Model implements Observable{
      * @param velocidad
      * @return
      */
-    public static Integer cambiarVelocidad(String matricula, Integer velocidad){
-        Coche coche = getCoche(matricula);
-        if (coche != null){
-            coche.velocidad = velocidad;
-        }
-        return velocidad;
+    public void  cambiarVelocidad(String matricula, Integer velocidad){
+        //Buscamos el coche y cambiamos la velocidad
+        getCoche(matricula).velocidad = velocidad;
+        //Notificamos a los observadores
+        notifyObservers(getCoche(matricula));
+
+        // ya no retornamos la nueva velocidad
+        // porque vamos a utilizar el patron observer
+        // return getCoche(matricula).velocidad;
     }
 
     /**
      * Devuelve la velocidad del coche
+     *
      * @param matricula
      * @return
      */
     public static Integer getVelocidad(String matricula){
-        Coche coche = getCoche(matricula);
-        return coche.velocidad;
+        return getCoche(matricula).velocidad;
     }
 
 }
