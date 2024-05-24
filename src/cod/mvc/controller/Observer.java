@@ -6,7 +6,7 @@ public interface Observer {
 
      /**
       * Actualiza el estado del coche
-      * @param coche es el coche que se va a actualizar
+      * @param arg es el coche que se va a actualizar
       */
-     void update(Coche coche);
+     void update(Coche arg);
 }
