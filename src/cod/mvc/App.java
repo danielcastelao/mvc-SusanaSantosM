@@ -17,12 +17,8 @@ public class App {
         miController.crearCoche("1234ABC", "Seat", 100);
         miController.crearCoche("5678DEF", "Renault", 120);
 
-        //Cambiamos la velocidad de un coche
-        miController.cambiarVelocidad("1234ABC", 150);
-
         //Otro cambio de velocidad
-        miController.cambiarVelocidad("1234ABC", 250);
-
+        miController.cambiarVelocidad("1234ABC", 210);
 
     }
 }

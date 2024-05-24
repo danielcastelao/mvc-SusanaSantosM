@@ -17,10 +17,6 @@ public class Controller {
 
         ObserverLimite observerLimite = new ObserverLimite();
         miModelo.addObserver(observerLimite);
-
-        //obsOtro obsOtro = new obsOtro();
-        //miModelo.addObserver(obsOtro);
-
     }
 
     //Métodos que se comunican con el modelo
