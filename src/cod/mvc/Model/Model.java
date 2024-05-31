@@ -82,7 +82,20 @@ public class Model implements Observable{
         return coche.velocidad;
     }
 
-
+    /**
+     * Método para buscar un coche a partir de su matrícula
+     * @param matricula identificador del coche
+     * @param velocidad es lo que puede correr un coche
+     * @return coche de tipo Coche
+     */
+    public Coche buscarCoche(String matricula, Integer velocidad){
+        for (Coche coche : parking){
+            if (coche.matricula.equals(matricula)){
+                return coche;
+            }
+        }
+        return null;
+    }
 
     /**
      * Utilizaremos el Model como un singleton
@@ -92,11 +105,7 @@ public class Model implements Observable{
     private Model() {
     }
 
-    static Model getInstance() {
+    public static Model getInstance() {
         return instaceModel;
-    }
-
-    public String metodo (){
-        return "Model instanciado";
     }
 }
