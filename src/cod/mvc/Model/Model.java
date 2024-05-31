@@ -3,9 +3,9 @@ package cod.mvc.Model;
 import cod.mvc.Controller.Observer;
 
 import java.util.ArrayList;
-import cod.mvc.Model.Coche;
 
 public class Model implements Observable{
+
     private static ArrayList<Coche> parking = new ArrayList<>();
 
     private static ArrayList<Observer> observers = new ArrayList<>();
@@ -82,4 +82,21 @@ public class Model implements Observable{
         return coche.velocidad;
     }
 
+
+
+    /**
+     * Utilizaremos el Model como un singleton
+     */
+    private static Model instaceModel = new Model();
+
+    private Model() {
+    }
+
+    static Model getInstance() {
+        return instaceModel;
+    }
+
+    public String metodo (){
+        return "Model instanciado";
+    }
 }
