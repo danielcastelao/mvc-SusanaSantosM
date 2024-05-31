@@ -19,6 +19,7 @@ public class App {
         miControlador.cambiarVelocidad("129874EU", 100);
         miControlador.cambiarVelocidad("897435EU", 150);
 
-
+        //Buscamos un coche
+        miControlador.buscarCoche("129874EU", 100);
     }
 }
