@@ -91,6 +91,7 @@ public class Model implements Observable{
     public Coche buscarCoche(String matricula, Integer velocidad){
         for (Coche coche : parking){
             if (coche.matricula.equals(matricula)){
+                System.out.println("Coche"+coche.matricula+"enocntrado, con velocidad"+coche.velocidad);
                 return coche;
             }
         }
