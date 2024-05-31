@@ -97,6 +97,7 @@ public class Model implements Observable{
         return null;
     }
 
+
     /**
      * Utilizaremos el Model como un singleton
      */
