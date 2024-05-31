@@ -5,9 +5,8 @@ import cod.mvc.Controller.Controller;
 
 public class App {
     public static void main(String[] args){
-
         //Instanciamos el modelo
-        Model miModelo = new Model();
+        Model miModelo = Model.getInstance();
 
         //Instanciamos el controlador
         Controller miControlador = new Controller(miModelo);
@@ -19,6 +18,7 @@ public class App {
         //Cambiamos la velocidad de un coche
         miControlador.cambiarVelocidad("129874EU", 100);
         miControlador.cambiarVelocidad("897435EU", 150);
+
 
     }
 }
