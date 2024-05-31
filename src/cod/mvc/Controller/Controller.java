@@ -4,18 +4,17 @@ import cod.mvc.Model.Model;
 
 public class Controller {
 
-    private final Model miModelo = new Model();
+    private Model miModelo = Model.getInstance();
 
     public Controller(Model miModelo){
 
         ObsVelocidad observerVelocidad = new ObsVelocidad();
-        miModelo.addObserver(observerVelocidad);
+        this.miModelo.addObserver(observerVelocidad);
 
         ObserverLimite obsLimite = new ObserverLimite();
-        miModelo.addObserver(obsLimite);
-
+        this.miModelo.addObserver(obsLimite);
+        
     }
-
 
     /**
      * Método que crea un coche
