@@ -12,7 +12,7 @@ public class App {
         Controller miControlador = new Controller(miModelo);
 
         //Creamos un coche
-        miControlador.crearCoche("129874EU", "Ferrari", 150);
+        miControlador.crearCoche("129874EU", "Ferrari", 100);
 
         //Bajamos la velocidad de un coche
         miControlador.bajarVelocidad("897435EU", 50);

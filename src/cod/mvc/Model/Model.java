@@ -80,9 +80,12 @@ public class Model implements Observable{
      * @return la velocidad disminuida
      */
     public Integer bajarVelocidad(String matricula, Integer v){
-        Coche coche = new Coche(matricula, "", 0);
-        coche.velocidad = coche.velocidad - v;
-        notifyObservers(coche, this);
+
+        Coche coche = getCoche(matricula);
+        if(coche.velocidad >0){
+            coche.velocidad = coche.velocidad - v;
+            notifyObservers(coche, this);
+        }
         return coche.velocidad;
     }
 
