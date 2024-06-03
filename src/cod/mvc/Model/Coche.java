@@ -8,6 +8,7 @@ public class Coche {
     public Coche(String matricula, String modelo, Integer velocidad){
         this.matricula = matricula;
         this.modelo = modelo;
-        this.velocidad = 0;
+        this.velocidad = velocidad;
     }
+
 }

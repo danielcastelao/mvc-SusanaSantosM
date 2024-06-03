@@ -4,7 +4,7 @@ import cod.mvc.Model.Model;
 
 public class Controller {
 
-    private Model miModelo = Model.getInstance();
+    private Model miModelo = new Model();;
 
     public Controller(Model miModelo){
 
@@ -27,12 +27,21 @@ public class Controller {
     }
 
     /**
-     * Método que cambia la velocidad de un coche
+     * Método para subir la velocidad de un coche
      * @param matricula del coche
-     * @param velocidad del coche
+     * @param velocidad que sube
      */
-    public void cambiarVelocidad(String matricula, Integer velocidad){
-        miModelo.cambiarVelocidad(matricula,velocidad);
+    public void subirVelocidad(String matricula, Integer velocidad){
+        miModelo.subirVelocidad(matricula, velocidad);
+    }
+
+    /**
+     * Método para cambiar la velocidad de un coche
+     * @param matricula del coche
+     * @param velocidad que baja
+     */
+    public void bajarVelocidad(String matricula, Integer velocidad){
+        miModelo.bajarVelocidad(matricula, velocidad);
     }
 
     /**

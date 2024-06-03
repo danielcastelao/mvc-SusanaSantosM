@@ -26,8 +26,9 @@ public class ObserverLimite implements Observer{
             System.out.println("[INFRACCIÓN]  El coche con matrícula " + coche.matricula + " superó el límite de velocidad");
 
             // Reducir la velocidad del coche
-            model.cambiarVelocidad(coche.matricula, coche.velocidad - reduccionVelocidad);
-            System.out.println("La velocidad del coche " + coche.matricula + " se redujo a " + (coche.velocidad - reduccionVelocidad));
+            model.bajarVelocidad(coche.matricula, reduccionVelocidad);
+            coche.velocidad -= reduccionVelocidad;
+            System.out.println("La velocidad del coche " + coche.matricula + " se redujo a " + coche.velocidad + " km/h");
         }
     }
 }
