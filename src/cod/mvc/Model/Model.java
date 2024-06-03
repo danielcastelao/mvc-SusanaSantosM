@@ -52,6 +52,7 @@ public class Model implements Observable{
 
     /**
      * Método para obtener un coche a partir de su matrícula
+     * @return coche de tipo Coche y no puede ser null
      */
     public Coche getCoche(String matricula){
         for (Coche coche : parking){
@@ -63,11 +64,24 @@ public class Model implements Observable{
     }
 
     /**
-     * Método para cambiar la velocidad del coche
+     * Método para subir velocidad del coche
+     * @return la velocidad aumentada
      */
-    public Integer cambiarVelocidad(String matricula, Integer velocidad){
+    public Integer subirVelocidad(String matricula, Integer v){
+        int velocidadAumentada;
         Coche coche = getCoche(matricula);
-        coche.velocidad = velocidad;
+        velocidadAumentada = coche.velocidad + v;
+        notifyObservers(coche, this);
+        return velocidadAumentada;
+    }
+
+    /**
+     * Método para bajar la velocidad del coche
+     * @return la velocidad disminuida
+     */
+    public Integer bajarVelocidad(String matricula, Integer v){
+        Coche coche = new Coche(matricula, "", 0);
+        coche.velocidad = coche.velocidad - v;
         notifyObservers(coche, this);
         return coche.velocidad;
     }
@@ -98,16 +112,4 @@ public class Model implements Observable{
         return null;
     }
 
-
-    /**
-     * Utilizaremos el Model como un singleton
-     */
-    private static Model instaceModel = new Model();
-
-    private Model() {
-    }
-
-    public static Model getInstance() {
-        return instaceModel;
-    }
 }
