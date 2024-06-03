@@ -1,4 +1,4 @@
-package cod.mvc;
+package cod.mvc.Model;
 
 public class Coche {
     public String matricula;
@@ -10,4 +10,5 @@ public class Coche {
         this.modelo = modelo;
         this.velocidad = velocidad;
     }
+
 }
